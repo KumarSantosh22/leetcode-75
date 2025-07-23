@@ -1,7 +1,8 @@
 import time
 from functools import wraps
 
-def time_it(func): # This is the decorator function
+
+def time_it(func):  # This is the decorator function
     """
     Decorator that measures the execution time of a function.
     """
@@ -19,5 +20,5 @@ def time_it(func): # This is the decorator function
         ms = execution_time*1000
         print(f"Function '{func.__name__}' took {ms:.12f} ms to execute.")
 
-        return result    
+        return result
     return wrapper
