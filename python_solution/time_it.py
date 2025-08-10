@@ -18,7 +18,7 @@ def time_it(func):  # This is the decorator function
 
         # print time taken in ms
         ms = execution_time*1000
-        print(f"Function '{func.__name__}' took {ms:.12f} ms to execute.")
+        print(f"Function '{func.__name__}' took \033[35m{ms:.12f}\033[0m ms to execute.")
 
         return result
     return wrapper

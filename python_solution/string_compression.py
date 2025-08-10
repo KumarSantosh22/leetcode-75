@@ -21,11 +21,10 @@ def string_compression(chars: list[str]) -> int:
         chars[insert] = char
         insert += 1
         if count > 1:
-            digits = [int(digit) for digit in str(count)]
-            for d in digits:
-                chars[insert] = str(d)
+            str_number = str(count)
+            for str_digit in str_number:
+                chars[insert] = str_digit
                 insert += 1
-        count = 0
 
     print(chars)
     return insert
