@@ -54,7 +54,7 @@ def optimized_merge(word1: str, word2: str) -> str:
             result += word1[i]
         if i < len2:
             result += word2[i]
-    result
+    return result
 
 
 if __name__ == "__main__":
