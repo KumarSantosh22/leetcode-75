@@ -57,6 +57,22 @@ def optimized_merge(word1: str, word2: str) -> str:
     return result
 
 
+@time_it
+def merge_optimal_clean(word1: str, word2: str) -> str:
+    result = []
+    i = 0
+
+    while i < len(word1) and i < len(word2):
+        result.append(word1[i])
+        result.append(word2[i])
+        i += 1
+
+    result.extend(word1[i:])
+    result.extend(word2[i:])
+
+    return ''.join(result)
+
+
 if __name__ == "__main__":
     words = [
         ["cat", "mat"],
@@ -71,6 +87,7 @@ if __name__ == "__main__":
         print(f"New string: {merge_strings_alternately(word[0], word[1])}\n")
         print(f"New string: {merge_alternately(word[0], word[1])}\n")
         print(f"New string: {optimized_merge(word[0], word[1])}\n")
+        print(f"New string: {merge_optimal_clean(word[0], word[1])}\n")
 
 
 """
