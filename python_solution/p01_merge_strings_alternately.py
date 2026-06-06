@@ -41,6 +41,22 @@ def merge_alternately(word1: str, word2: str) -> str:
     return word
 
 
+@time_it
+def optimized_merge(word1: str, word2: str) -> str:
+    result = ""
+    len1 = len(word1)
+    len2 = len(word2)
+
+    max_len = max(len1, len2)
+
+    for i in range(max_len):
+        if i < len1:
+            result += word1[i]
+        if i < len2:
+            result += word2[i]
+    result
+
+
 if __name__ == "__main__":
     words = [
         ["cat", "mat"],
@@ -54,6 +70,7 @@ if __name__ == "__main__":
     for word in words:
         print(f"New string: {merge_strings_alternately(word[0], word[1])}\n")
         print(f"New string: {merge_alternately(word[0], word[1])}\n")
+        print(f"New string: {optimized_merge(word[0], word[1])}\n")
 
 
 """
