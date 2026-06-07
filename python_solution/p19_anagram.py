@@ -1,3 +1,7 @@
+from time_it import time_it
+
+
+@time_it
 def is_anagram(s: str, t: str) -> bool:
     if len(s) != len(t):
         return False
@@ -22,6 +26,8 @@ def is_anagram(s: str, t: str) -> bool:
             return False
     return True
 
+
+@time_it
 def is_anagram_optimal(s: str, t: str) -> bool:
     if len(s) != len(t):
         return False
@@ -32,9 +38,19 @@ def is_anagram_optimal(s: str, t: str) -> bool:
         frequency[ch] = frequency.get(ch, 0) + 1
     for ch in t:
         frequency[ch] = frequency.get(ch, 0) - 1
-    
-    return all(count ==0 for count in  frequency.values())
+
+    return all(count == 0 for count in frequency.values())
 
 
-print(is_anagram_optimal('racecar', 'carrace'))
-print(is_anagram_optimal('aa', 'bb'))
+if __name__ == '__main__':
+    items = [
+        # [['Input'], 'Output'],
+        [['carrace', 'racecar'], True],
+        [['aa', 'bb'], False],
+    ]
+
+    for item in items:
+        # result = max_number_of_k_sum_pairs(item[0], item[1])
+        result = is_anagram_optimal(item[0][0], item[0][1])
+        print(
+            f'\033[33mResult =\033[0m {result}\n==={"\033[32mPassed\033[0m" if result == item[1] else "\033[31mFailed\033[0m"}\n')
