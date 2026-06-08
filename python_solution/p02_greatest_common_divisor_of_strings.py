@@ -10,6 +10,18 @@ def greatest_common_divisor_of_strings(str1: str, str2: str) -> str:
         return greatest_common_divisor_of_strings(str1[len(str2):], str2)
     return ""
 
+def greatest_common_divisor_of_strings_by_gcd_math(str1: str, str2: str) -> str:
+    def gcd(m:int,n:int) -> int:
+            if(m%n == 0):
+                return n
+            return gcd(n, m%n)
+
+    len1,len2 = len(str1),len(str2)
+    if(str1+str2) != (str2+str1):
+        return ''
+    g = gcd(len1, len2)
+    return str1[:g]
+
 
 if __name__ == "__main__":
     words = [

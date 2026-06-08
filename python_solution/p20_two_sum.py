@@ -1,6 +1,3 @@
-# nums=[-1,-2,-3,-4,-5]
-# target=-8
-
 from typing import List
 
 
@@ -26,10 +23,3 @@ def two_sum_for_all(nums: List[int], target: int) -> List[int]:
         if complement in hashmap:
             return [hashmap[complement], i]
         hashmap[num] = i
-
-nums = [-1, -2, -3, -4, -5]
-target = -8
-result = [2, 4]
-
-
-print(two_sum_for_all(nums, target))
